@@ -8,23 +8,23 @@
   </head>
   <body>
     <div id="app">
-      <span v-text="message"></span>
+      <span p-text="message"></span>
       <br />
-      <input v-model="message" type="text" />
+      <input p-model="message" type="text" />
     </div>
-    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./platzi.js"></script>
     <script>
-      const { createApp } = Vue;
+      const { createApp } = Platzi;
 
       const app = createApp({
         data() {
           return {
-            message: "Hola mundo!",
+            message: "Hola Platzi!",
           };
         },
       });
 
-      app.mount("#app");
+      app.mount();
     </script>
   </body>
 </html>
