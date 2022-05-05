@@ -10,8 +10,9 @@
     <div id="app">
       <span p-text="message"></span>
       <br />
-      <input p-model="message" type="text" />
+      <input type="text" p-model="message" />
     </div>
+
     <script src="./platzi.js"></script>
     <script>
       const { createApp } = Platzi;
@@ -23,7 +24,6 @@
           };
         },
       });
-
       app.mount();
     </script>
   </body>

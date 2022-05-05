@@ -1,11 +1,20 @@
 class PlatziReactive {
   constructor(options) {
+    // Origen
     this.origen = options.data();
+
+    // Destino
+    this.$data = new Proxy(this.origen, {
+      // Trampas: get, set, has, ...
+      get(target, name) {
+        console.log(target, name);
+      },
+    });
   }
 
   mount() {
     document.querySelectorAll("*[p-text]").forEach((el) => {
-      this.pText(el, this.origen, el.getAttribute("p-text"));
+      this.pText(el, this.$data, el.getAttribute("p-text"));
     });
   }
 
