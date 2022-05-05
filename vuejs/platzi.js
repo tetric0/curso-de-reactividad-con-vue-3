@@ -7,7 +7,11 @@ class PlatziReactive {
     this.$data = new Proxy(this.origen, {
       // Trampas: get, set, has, ...
       get(target, name) {
-        console.log(target, name);
+        if (name in target) {
+          return target[name];
+        }
+        console.warn("La propiedad", name, "no existe");
+        return "";
       },
     });
   }
